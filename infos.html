@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaétan KEMENI - Mon Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes blob {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.95);
+  }
+}
+.animate-blob {
+  animation: blob 8s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-3">
+          <div class="h-10 w-10 rounded-full overflow-hidden">
+            <img src="pp.jpg" alt="Logo" class="h-full w-full object-cover">
+          </div>
+          
+          <span class="font-bold text-xl text-indigo-600">Gaétan KEMENI</span>
+        </div>
+
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">Accueil</a>
+          <a href="apropos.html" class="text-gray-700 hover:text-indigo-600 font-medium">À propos</a>
+          <a href="activites.html" class="text-gray-700 hover:text-indigo-600 font-medium">Activités</a>
+          <a href="passions.html" class="text-gray-700 hover:text-indigo-600 font-medium">Passions</a>
+          <a href="contact.html" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
+      <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À propos</a>
+      <a href="activites.html" class="block py-2 text-gray-700 hover:text-indigo-600">Activités</a>
+      <a href="passions.html" class="block py-2 text-gray-700 hover:text-indigo-600">Passions</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </header>
+
+  
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+ <!-- Section Communiqués -->
+ <section class="mb-12">
+    <h2 class="text-3xl font-bold text-center mb-12 text-indigo-600">Communiqués Officiels</h2>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Article 1 : Conception Web et Documents Professionnels -->
+<article class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition duration-300 relative">
+    <h3 class="text-xl font-semibold text-gray-800 mb-3">💻 Conception Web & Création de Documents</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Vous cherchez à moderniser votre présence en ligne ou à soigner vos documents professionnels ? Profitez de nos services sur mesure :
+    </p>
+    <ul class="list-disc list-inside text-gray-600 mt-3">
+      <li>Conception d'applications performantes et de sites Web responsives</li>
+      <li>Création de documents impeccables : rapports, CV, lettres de motivation</li>
+      <li>Design moderne et contenu percutant adapté à vos besoins</li>
+    </ul>
+    <p class="mt-4 text-gray-700">
+      Ne laissez plus votre image professionnelle au hasard. Optez pour l'efficacité et l'élégance.
+    </p>
+    <p class="mt-2 text-sm text-gray-400">Publié le 24 Avril 2025</p>
+  
+    <a href="https://wa.me/1234567890" target="_blank" class="absolute bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm hover:bg-green-600 transition">
+      Me contacter sur WhatsApp
+    </a>
+  </article>
+  
+  <!-- Article 2 : PowerPoint et Formation Bureautique -->
+  <article class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition duration-300 relative">
+    <h3 class="text-xl font-semibold text-gray-800 mb-3">📊 PowerPoint & Formation Bureautique</h3>
+    <p class="text-gray-600 leading-relaxed">
+      Envie de maîtriser les outils bureautiques ou de réaliser des présentations professionnelles captivantes ? Voici ce que nous vous proposons :
+    </p>
+    <ul class="list-disc list-inside text-gray-600 mt-3">
+      <li>Création de présentations PowerPoint dynamiques et esthétiques</li>
+      <li>Formations personnalisées sur Word, Excel, PowerPoint, etc.</li>
+      <li>Accompagnement pour améliorer votre efficacité bureautique</li>
+    </ul>
+    <p class="mt-4 text-gray-700">
+      Boostez votre productivité et impressionnez vos interlocuteurs avec des supports clairs et percutants.
+    </p>
+    <p class="mt-2 text-sm text-gray-400">Publié le 24 Avril 2025</p>
+  
+    <a href="https://wa.me/1234567890" target="_blank" class="absolute bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm hover:bg-green-600 transition">
+      Me contacter sur WhatsApp
+    </a>
+  </article>
+  
+      <!-- Communiqué 1 -->
+      <article class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">🔔 Lancement de mon nouveau projet Web</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Je suis fier d'annoncer le lancement d'un nouveau projet basé sur Vue.js et Laravel. Ce projet vise à faciliter la gestion des tâches quotidiennes pour les jeunes entrepreneurs. Restez connectés !
+        </p>
+        <p class="mt-4 text-sm text-gray-400">Publié le 24 Avril 2025</p>
+      </article>
+  
+      <!-- Communiqué 2 -->
+      <article class="bg-white rounded-xl shadow p-6 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">📢 Information importante</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Le site sera en maintenance ce week-end pour une mise à jour majeure. Merci de votre compréhension.
+        </p>
+        <p class="mt-4 text-sm text-gray-400">Publié le 22 Avril 2025</p>
+      </article>
+    </div>
+  </section>
+  
+  
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+
+</html>
