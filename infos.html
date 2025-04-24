@@ -153,6 +153,25 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          // Scroll to the element smoothly
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+  
+          // Add a temporary highlight
+          target.classList.add("ring", "ring-indigo-400", "ring-offset-2");
+          setTimeout(() => {
+            target.classList.remove("ring", "ring-indigo-400", "ring-offset-2");
+          }, 3000); // Highlight disappears after 3s
+        }
+      }
+    });
+  </script>
+  
 
 </body>
 
