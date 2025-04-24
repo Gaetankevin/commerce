@@ -1,60 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaétan KEMENI - Mon Blog</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100 text-gray-800">
 
-    <!-- Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center space-x-3">
-            <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Logo" class="h-10 w-10 rounded-full">
-            <span class="font-bold text-xl text-indigo-600">Gaétan KEMENI</span>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaétan KEMENI - Mon Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-          <nav class="hidden md:flex space-x-6">
-            <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">Accueil</a>
-            <a href="apropos.html" class="text-gray-700 hover:text-indigo-600 font-medium">À propos</a>
-            <a href="activites.html" class="text-gray-700 hover:text-indigo-600 font-medium">Activités</a>
-            <a href="passions.html" class="text-gray-700 hover:text-indigo-600 font-medium">Passions</a>
-            <a href="contact.html" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
-          </nav>
+<body class="bg-gray-100 text-gray-800">
 
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
-                   viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-3">
+          <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Logo" class="h-10 w-10 rounded-full">
+          <span class="font-bold text-xl text-indigo-600">Gaétan KEMENI</span>
+        </div>
+
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">Accueil</a>
+          <a href="apropos.html" class="text-gray-700 hover:text-indigo-600 font-medium">À propos</a>
+          <a href="activites.html" class="text-gray-700 hover:text-indigo-600 font-medium">Activités</a>
+          <a href="passions.html" class="text-gray-700 hover:text-indigo-600 font-medium">Passions</a>
+          <a href="contact.html" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
+    </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-        <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
-        <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À propos</a>
-        <a href="activites.html" class="block py-2 text-gray-700 hover:text-indigo-600">Activités</a>
-        <a href="passions.html" class="block py-2 text-gray-700 hover:text-indigo-600">Passions</a>
-        <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
+      <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À propos</a>
+      <a href="activites.html" class="block py-2 text-gray-700 hover:text-indigo-600">Activités</a>
+      <a href="passions.html" class="block py-2 text-gray-700 hover:text-indigo-600">Passions</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </header>
+  <main class="max-w-5xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-8">Contacte-moi</h1>
+
+    <!-- Section Réseaux Sociaux -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Retrouve-moi ici</h2>
+      <div class="flex gap-6 justify-center text-3xl">
+        <a href="https://facebook.com" target="_blank" class="hover:text-blue-600 transition"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="hover:text-blue-800 transition"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" class="hover:text-blue-400 transition"><i
+            class="fab fa-twitter"></i></a>
+        <a href="https://github.com" target="_blank" class="hover:text-gray-700 transition"><i
+            class="fab fa-github"></i></a>
+        <a href="https://instagram.com" target="_blank" class="hover:text-pink-500 transition"><i
+            class="fab fa-instagram"></i></a>
       </div>
-    </header>
+    </section>
 
-    <script>
-      const toggleBtn = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
+    <!-- Section Formulaire -->
+    <section class="bg-white shadow-md rounded-xl p-8">
+      <h2 class="text-xl font-semibold mb-6">Écris-moi directement</h2>
+      <form action="https://formspree.io/f/{TON_ID}" method="POST" class="space-y-6">
+        <div>
+          <label class="block font-medium mb-1">Nom</label>
+          <input type="text" name="name" required
+            class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Email</label>
+          <input type="email" name="email" required
+            class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Message</label>
+          <textarea name="message" rows="5" required
+            class="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
+          Envoyer le message
+        </button>
+      </form>
+    </section>
 
-      toggleBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    </script>
+    <!-- Section Coordonnées -->
+    <section class="mt-12 text-center">
+      <p class="text-sm text-gray-600">📍 Bessengue, Douala</p>
+      <p class="text-sm text-gray-600">📞 +237 696 267 628</p>
+      <p class="text-sm text-gray-600">✉️ <a href="mailto:G45398364@gmail.com"
+          class="underline text-indigo-500">G45398364@gmail.com</a></p>
+      <p class="mt-4 text-xs text-gray-400">Je parle français, anglais, chinois (en cours) et allemand (en cours).</p>
+    </section>
+  </main>
 
-  </body>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            float: 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+</body>
+
 </html>
