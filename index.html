@@ -1,60 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaétan KEMENI - Mon Blog</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100 text-gray-800">
 
-    <!-- Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center space-x-3">
-            <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Logo" class="h-10 w-10 rounded-full">
-            <span class="font-bold text-xl text-indigo-600">Gaétan KEMENI</span>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaétan KEMENI - Mon Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-          <nav class="hidden md:flex space-x-6">
-            <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">Accueil</a>
-            <a href="apropos.html" class="text-gray-700 hover:text-indigo-600 font-medium">À propos</a>
-            <a href="activites.html" class="text-gray-700 hover:text-indigo-600 font-medium">Activités</a>
-            <a href="passions.html" class="text-gray-700 hover:text-indigo-600 font-medium">Passions</a>
-            <a href="contact.html" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
-          </nav>
+<body class="bg-gray-100 text-gray-800">
 
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
-                   viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-3">
+          <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Logo" class="h-10 w-10 rounded-full">
+          <span class="font-bold text-xl text-indigo-600">Gaétan KEMENI</span>
+        </div>
+
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">Accueil</a>
+          <a href="apropos.html" class="text-gray-700 hover:text-indigo-600 font-medium">À propos</a>
+          <a href="activites.html" class="text-gray-700 hover:text-indigo-600 font-medium">Activités</a>
+          <a href="passions.html" class="text-gray-700 hover:text-indigo-600 font-medium">Passions</a>
+          <a href="contact.html" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
+    </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-        <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
-        <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À propos</a>
-        <a href="activites.html" class="block py-2 text-gray-700 hover:text-indigo-600">Activités</a>
-        <a href="passions.html" class="block py-2 text-gray-700 hover:text-indigo-600">Passions</a>
-        <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-indigo-600">Accueil</a>
+      <a href="apropos.html" class="block py-2 text-gray-700 hover:text-indigo-600">À propos</a>
+      <a href="activites.html" class="block py-2 text-gray-700 hover:text-indigo-600">Activités</a>
+      <a href="passions.html" class="block py-2 text-gray-700 hover:text-indigo-600">Passions</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-indigo-700 mb-4">
+        Bienvenue sur le blog de Gaétan KEMENI
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Passionné de développement, de création, et de transmission. Ici, je partage mes projets, mes passions, mes
+        expériences et un peu de moi-même.
+      </p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">👨‍💻 Compétences</h2>
+        <p class="text-gray-700">
+          Développement logiciel, Web, mobile, gestion de projet, UI/UX... avec un amour particulier pour l'efficacité,
+          la qualité et l'impact.
+        </p>
       </div>
-    </header>
 
-    <script>
-      const toggleBtn = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">🎯 Objectif</h2>
+        <p class="text-gray-700">
+          Me présenter de manière authentique et professionnelle, ouvrir la porte à des collaborations enrichissantes,
+          et partager ce que j’aime.
+        </p>
+      </div>
 
-      toggleBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    </script>
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">🎨 Passions</h2>
+        <p class="text-gray-700">
+          Design, innovation, écriture, exploration d’idées. J’aime créer des choses qui font sens et qui racontent une
+          histoire.
+        </p>
+      </div>
 
-  </body>
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold text-indigo-600 mb-2">❤️ Humainement</h2>
+        <p class="text-gray-700">
+          Curieux, loyal, ouvert et passionné. J’accorde une grande importance aux relations humaines, à la sincérité et
+          à l’écoute.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+
 </html>
