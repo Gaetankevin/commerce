@@ -20,6 +20,27 @@
     });
   </script>
   <style>
+    
+    .canvas-section {
+      position: relative;
+      height: 100vh;
+      background: black;
+    }
+
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.5s;
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+    }
     @keyframes blob {
 
       0%,
@@ -141,6 +162,13 @@
         expériences et un peu de moi-même.
       </p>
     </section>
+      <!-- Animation Frames (avec images) -->
+  <section class="canvas-section">
+    <div class="frame" id="frame1"></div>
+    <div class="frame" id="frame2"></div>
+    <div class="frame" id="frame3"></div>
+    <!-- Ajoute d'autres images si nécessaire -->
+  </section>
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="bg-white p-6 rounded-2xl shadow-md">
@@ -185,6 +213,73 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
+
+
+<script type="module">
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Cibler toutes les frames avec des images
+  const frames = document.querySelectorAll('.frame');
+  const totalFrames = 5001; // Nombre total d'images, de 0000 à 5000
+
+  // Fonction pour charger dynamiquement les images
+  function loadImage(frameIndex) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = `/frames/frame_${String(frameIndex).padStart(4, '0')}.jpg`; // Chemin d'image dynamique
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+    });
+  }
+
+  let currentFrameIndex = 0; // Index de l'image actuelle
+  let images = []; // Tableau des images chargées
+
+  // Fonction pour mettre à jour le fond des frames
+  function updateFrames(frameIndex) {
+    loadImage(frameIndex).then(img => {
+      frames.forEach(frame => {
+        frame.style.backgroundImage = `url(${img.src})`;
+      });
+    }).catch(err => {
+      console.error("Erreur lors du chargement de l'image", err);
+    });
+  }
+
+  // Fonction d'animation avec ScrollTrigger
+  gsap.to({ frame: 0 }, {
+    frame: totalFrames - 1,
+    snap: "frame",
+    ease: "none",
+    scrollTrigger: {
+      scrub: true,
+      trigger: '.canvas-section',
+      start: 'top top',
+      end: 'bottom top',
+      pin: true,
+      onEnter: () => {
+        // Charger l'image initiale
+        updateFrames(currentFrameIndex);
+      },
+      onUpdate: (self) => {
+        // Calculer l'index de l'image en fonction du pourcentage du scroll
+        const frameIndex = Math.floor(self.progress * (totalFrames - 1));
+        if (frameIndex !== currentFrameIndex) {
+          currentFrameIndex = frameIndex;
+          updateFrames(currentFrameIndex);
+        }
+      },
+      onLeaveBack: () => {
+        // Optionnellement, on peut remettre l'index de l'image à 0
+        currentFrameIndex = 0;
+        updateFrames(currentFrameIndex);
+      }
+    }
+  });
+</script>
 
 </body>
 
