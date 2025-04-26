@@ -7,8 +7,8 @@
   <title>Gaétan KEMENI - Mon Blog</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="logo.png">
-  
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
@@ -20,7 +20,6 @@
     });
   </script>
   <style>
-    
     .canvas-section {
       position: relative;
       height: 100vh;
@@ -41,6 +40,7 @@
       background-size: cover;
       background-position: center;
     }
+
     @keyframes blob {
 
       0%,
@@ -146,11 +146,13 @@
 
         <!-- Image ou avatar -->
         <div class="flex justify-center">
-          <img src="logo.png" alt="Portrait" class="w-80 h-80 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300">
+          <img src="logo.png" alt="Portrait"
+            class="w-80 h-80 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300">
         </div>
       </div>
     </div>
   </section>
+  
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <section class="text-center mb-12">
@@ -162,13 +164,16 @@
         expériences et un peu de moi-même.
       </p>
     </section>
-      <!-- Animation Frames (avec images) -->
+
+    
+  <!-- Animation Frames (avec images) -->
   <section class="canvas-section">
     <div class="frame" id="frame1"></div>
     <div class="frame" id="frame2"></div>
     <div class="frame" id="frame3"></div>
     <!-- Ajoute d'autres images si nécessaire -->
   </section>
+
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="bg-white p-6 rounded-2xl shadow-md">
@@ -214,31 +219,23 @@
     });
   </script>
 
-
-<script type="module">
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+<script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Cibler toutes les frames avec des images
   const frames = document.querySelectorAll('.frame');
-  const totalFrames = 5001; // Nombre total d'images, de 0000 à 5000
+  const totalFrames = 11398;
 
-  // Fonction pour charger dynamiquement les images
   function loadImage(frameIndex) {
     return new Promise((resolve, reject) => {
       const img = new Image();
-      img.src = `/frames/frame_${String(frameIndex).padStart(4, '0')}.jpg`; // Chemin d'image dynamique
+      img.src = `public/frames/frame_${String(frameIndex).padStart(4, '0')}.jpg`;
       img.onload = () => resolve(img);
       img.onerror = reject;
     });
   }
 
-  let currentFrameIndex = 0; // Index de l'image actuelle
-  let images = []; // Tableau des images chargées
+  let currentFrameIndex = 0;
 
-  // Fonction pour mettre à jour le fond des frames
   function updateFrames(frameIndex) {
     loadImage(frameIndex).then(img => {
       frames.forEach(frame => {
@@ -249,7 +246,6 @@
     });
   }
 
-  // Fonction d'animation avec ScrollTrigger
   gsap.to({ frame: 0 }, {
     frame: totalFrames - 1,
     snap: "frame",
@@ -258,14 +254,12 @@
       scrub: true,
       trigger: '.canvas-section',
       start: 'top top',
-      end: 'bottom top',
+      end: '+=100000',
       pin: true,
       onEnter: () => {
-        // Charger l'image initiale
         updateFrames(currentFrameIndex);
       },
       onUpdate: (self) => {
-        // Calculer l'index de l'image en fonction du pourcentage du scroll
         const frameIndex = Math.floor(self.progress * (totalFrames - 1));
         if (frameIndex !== currentFrameIndex) {
           currentFrameIndex = frameIndex;
@@ -273,7 +267,6 @@
         }
       },
       onLeaveBack: () => {
-        // Optionnellement, on peut remettre l'index de l'image à 0
         currentFrameIndex = 0;
         updateFrames(currentFrameIndex);
       }
