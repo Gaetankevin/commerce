@@ -67,7 +67,19 @@
   </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800"> <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NWTFJZLC');</script>
+  <!-- End Google Tag Manager --><!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWTFJZLC" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navbar -->
   <header class="bg-white shadow-md sticky top-0 z-50">
@@ -152,7 +164,7 @@
       </div>
     </div>
   </section>
-  
+
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <section class="text-center mb-12">
@@ -165,14 +177,14 @@
       </p>
     </section>
 
-    
-  <!-- Animation Frames (avec images) -->
-  <section class="canvas-section">
-    <div class="frame" id="frame1"></div>
-    <div class="frame" id="frame2"></div>
-    <div class="frame" id="frame3"></div>
-    <!-- Ajoute d'autres images si nécessaire -->
-  </section>
+
+    <!-- Animation Frames (avec images) -->
+    <section class="canvas-section">
+      <div class="frame" id="frame1"></div>
+      <div class="frame" id="frame2"></div>
+      <div class="frame" id="frame3"></div>
+      <!-- Ajoute d'autres images si nécessaire -->
+    </section>
 
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -219,60 +231,61 @@
     });
   </script>
 
-<script>
-  gsap.registerPlugin(ScrollTrigger);
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
 
-  const frames = document.querySelectorAll('.frame');
-  const totalFrames = 11398;
+    const frames = document.querySelectorAll('.frame');
+    const totalFrames = 11398;
 
-  function loadImage(frameIndex) {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.src = `public/frames/frame_${String(frameIndex).padStart(4, '0')}.jpg`;
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-    });
-  }
-
-  let currentFrameIndex = 0;
-
-  function updateFrames(frameIndex) {
-    loadImage(frameIndex).then(img => {
-      frames.forEach(frame => {
-        frame.style.backgroundImage = `url(${img.src})`;
+    function loadImage(frameIndex) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = `public/frames/frame_${String(frameIndex).padStart(4, '0')}.jpg`;
+        img.onload = () => resolve(img);
+        img.onerror = reject;
       });
-    }).catch(err => {
-      console.error("Erreur lors du chargement de l'image", err);
-    });
-  }
+    }
 
-  gsap.to({ frame: 0 }, {
-    frame: totalFrames - 1,
-    snap: "frame",
-    ease: "none",
-    scrollTrigger: {
-      scrub: true,
-      trigger: '.canvas-section',
-      start: 'top top',
-      end: '+=100000',
-      pin: true,
-      onEnter: () => {
-        updateFrames(currentFrameIndex);
-      },
-      onUpdate: (self) => {
-        const frameIndex = Math.floor(self.progress * (totalFrames - 1));
-        if (frameIndex !== currentFrameIndex) {
-          currentFrameIndex = frameIndex;
+    let currentFrameIndex = 0;
+
+    function updateFrames(frameIndex) {
+      loadImage(frameIndex).then(img => {
+        frames.forEach(frame => {
+          frame.style.backgroundImage = `url(${img.src})`;
+        });
+      }).catch(err => {
+        console.error("Erreur lors du chargement de l'image", err);
+      });
+    }
+
+    gsap.to({ frame: 0 }, {
+      frame: totalFrames - 1,
+      snap: "frame",
+      ease: "none",
+      scrollTrigger: {
+        scrub: true,
+        trigger: '.canvas-section',
+        start: 'top top',
+        end: '+=50000',
+        pin: true,
+        onEnter: () => {
+          updateFrames(currentFrameIndex);
+        },
+        onUpdate: (self) => {
+          const frameIndex = Math.floor(self.progress * (totalFrames - 1));
+          if (frameIndex !== currentFrameIndex) {
+            currentFrameIndex = frameIndex;
+            updateFrames(currentFrameIndex);
+          }
+        },
+        onLeaveBack: () => {
+          currentFrameIndex = 0;
           updateFrames(currentFrameIndex);
         }
-      },
-      onLeaveBack: () => {
-        currentFrameIndex = 0;
-        updateFrames(currentFrameIndex);
       }
-    }
-  });
-</script>
+    });
+  </script>
+
 
 </body>
 
